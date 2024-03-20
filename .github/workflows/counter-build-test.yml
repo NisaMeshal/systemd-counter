@@ -16,16 +16,19 @@ jobs:
       - name: Build project
         run: |
           make build
-
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-  test:
-    timeout-minutes: 2
-    runs-on: ubuntu-latest
-    steps:
       - name: test project
         run: |
           pip install pytest 
           make test
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+  # test:
+  #   timeout-minutes: 2
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: test project
+  #       run: |
+  #         pip install pytest 
+  #         make test
   # deb-package-stuff:
   #   runs-on: ubuntu-latest
   #   steps:
