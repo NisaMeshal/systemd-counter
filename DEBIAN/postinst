@@ -1,0 +1,17 @@
+#!/bin/bash
+
+id -u counter &>/dev/null || useradd --system --no-create-home counter
+
+chmod +x /usr/local/bin/counterService.py
+
+chown counter /usr/local/bin/counterService.py
+
+echo "files modded"
+
+systemctl enable counter
+
+systemctl daemon-reload
+
+service counter start 
+
+service counter status
