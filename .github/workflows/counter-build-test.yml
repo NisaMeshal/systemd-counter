@@ -19,21 +19,22 @@ jobs:
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
   test:
+    timeout-minutes: 2
     runs-on: ubuntu-latest
     steps:
-      - name: Test project
+      - name: test project
         run: |
-          pip install pytest
+          pip install pytest 
           make test
-  deb-package-stuff:
-    runs-on: ubuntu-latest
-    steps:
-      - name: build deb package
-        run: |
-          make build-deb
-      - name: Archive deb package
-        uses: actions/upload-artifact@v4
-        with:
-          name: deb-package
-          path: |
-            counter-v2.0.0.deb
+  # deb-package-stuff:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: build deb package
+  #       run: |
+  #         make build-deb
+  #     - name: Archive deb package
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: deb-package
+  #         path: |
+  #           counter-v2.0.0.deb
