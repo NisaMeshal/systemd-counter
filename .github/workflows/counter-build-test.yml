@@ -1,5 +1,5 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: Counter Build
+run-name: ${{ github.actor }} is trying to make this work 🚀
 on: [push]
 jobs:
   build:
@@ -18,5 +18,6 @@ jobs:
           make build
       - name: Test project
         run: |
+          pip install pytest
           make test
       - run: echo "🍏 This job's status is ${{ job.status }}."
