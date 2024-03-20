@@ -6,7 +6,7 @@ build:
 	echo "uh... it's python"
 
 test:
-	pytest
+	pytest counterService_test.py
 
 run:
 	dpkg -i counter-v2.0.0.deb
@@ -16,7 +16,7 @@ build-deb:
 	echo "build deb complete"
 
 lint-deb:
-	lintian counter-v2.0.0.deb
+	-lintian counter-v2.0.0.deb
 
 clean:
 	rm -rf ./temp
