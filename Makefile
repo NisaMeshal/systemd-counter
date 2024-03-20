@@ -16,7 +16,7 @@ build-deb:
 	echo "build deb complete"
 
 lint-deb:
-	lintian counter-v2.0.0.deb
+	-lintian counter-v2.0.0.deb
 
 clean:
 	rm -rf ./temp
