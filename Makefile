@@ -6,7 +6,7 @@ build:
 	echo "uh... it's python"
 
 test:
-	pytest
+	python -m pytest
 
 run:
 	dpkg -i counter-v2.0.0.deb
