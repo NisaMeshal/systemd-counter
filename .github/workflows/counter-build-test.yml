@@ -16,4 +16,7 @@ jobs:
       - name: Build project
         run: |
           make build
+      - name: Test project
+        run: |
+          make test
       - run: echo "🍏 This job's status is ${{ job.status }}."
