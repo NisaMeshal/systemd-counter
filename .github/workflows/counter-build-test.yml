@@ -16,8 +16,12 @@ jobs:
       - name: Build project
         run: |
           make build
+
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Test project
         run: |
           pip install pytest
           make test
-      - run: echo "🍏 This job's status is ${{ job.status }}."
