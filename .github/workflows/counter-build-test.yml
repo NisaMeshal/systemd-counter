@@ -25,3 +25,15 @@ jobs:
         run: |
           pip install pytest
           make test
+  deb-package-stuff:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build deb package
+        run: |
+          make build-deb
+      - name: Archive deb package
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-package
+          path: |
+            counter-v2.0.0.deb
