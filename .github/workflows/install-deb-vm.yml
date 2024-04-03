@@ -1,6 +1,9 @@
 name: Deb in vm
 run-name: ${{ github.actor }} is doing stuff with VM
-on: [push]
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 jobs:
   build:
     timeout-minutes: 2
