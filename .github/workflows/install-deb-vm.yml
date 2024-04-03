@@ -13,4 +13,4 @@ jobs:
         host: 'instance-1'
         username: 'nisameshal'
         key: ${{ secrets.SSH_KEY }}
-        script: whoami
+        script: whoami 
