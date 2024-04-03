@@ -13,4 +13,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        command: 'echo Hello from Github'
+        script: |
+          whoami
+          echo Hello from Github
