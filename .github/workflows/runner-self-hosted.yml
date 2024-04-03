@@ -1,4 +1,4 @@
-name: Counter Build
+name: Runner setup
 run-name: ${{ github.actor }} is trying to make this work 🚀
 on: [push]
 jobs:
@@ -71,6 +71,5 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: lint deb package
         run: |
-          sudo apt-get install lintian
           make lint-deb
       - run: echo "🍏 This job's status is ${{ job.status }}."
