@@ -40,7 +40,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           source: "counter-v2.0.0.deb"
-          target: "/"
+          target: "./"
   ssh-to-vm:
     timeout-minutes: 2
     runs-on: self-hosted
