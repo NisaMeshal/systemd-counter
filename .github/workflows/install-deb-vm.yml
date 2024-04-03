@@ -1,9 +1,7 @@
 name: Runner setup
 run-name: ${{ github.actor }} is trying to make this work 🚀
-on: 
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+on: [push]
+
 jobs:
   test:
     name: test
