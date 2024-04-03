@@ -10,7 +10,7 @@ jobs:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: 'instance-1'
-        username: 'nisameshal'
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        script: whoami 
+        command: 'echo Hello from Github'
