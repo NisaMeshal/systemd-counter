@@ -23,3 +23,10 @@ clean:
 	rm -rf ./__pycache__
 	rm -rf ./.pytest_cache
 	rm -f *.deb
+
+docker-image:
+	docker build -t counter:latest .
+	echo "docker container built"
+
+docker-run:
+	docker run --rm --mount type=bind,source=/tmp,target=/tmp counter:latest

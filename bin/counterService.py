@@ -2,8 +2,11 @@ from datetime import datetime
 import sys
 import time
 import signal
+import os
 
+os.chmod('/tmp/currentCount.out', 664)
 f = open('/tmp/currentCount.out', 'w')
+
 counter = 0
 
 def term_handler(signum, frame):
