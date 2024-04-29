@@ -27,13 +27,6 @@ jobs:
     steps:
       - name: Install make
         run: apt-get update && apt-get install -y make
-      - name: Install Python
-        run: apt-get update && apt-get install -y python3
-
-      - name: pip install
-        run: apt install -y python3-pip 
-      - name: Install pytest
-        run: apt-get install -y python3-pytest
 
       - run: echo "Building deb package"
       - name: build deb package
@@ -50,9 +43,8 @@ jobs:
     needs: [build]
     timeout-minutes: 2
     runs-on: self-hosted
+    container: ubuntu:latest
     steps:
-      - name: Install make
-        run: apt-get update && apt-get install -y make
       - uses: actions/checkout@v4
       - name: copy file via ssh password
         uses: appleboy/scp-action@v0.1.7
@@ -66,9 +58,8 @@ jobs:
     needs: [build]
     timeout-minutes: 2
     runs-on: self-hosted
+    container: ubuntu:latest
     steps:
-      - name: Install make
-        run: apt-get update && apt-get install -y make
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v1.0.3
         with:
