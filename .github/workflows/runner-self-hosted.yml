@@ -18,9 +18,10 @@ jobs:
     steps:
       - name: Install make
         run: apt-get update && apt-get install -y make
-        
+
       - name: Build project
         run: |
+          ls
           make build
   test:
     needs: [build]
