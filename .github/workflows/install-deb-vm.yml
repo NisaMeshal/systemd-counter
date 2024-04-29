@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Build project
         run: |
-          apt-get update
+          apt-get -y update
           apt-get install -y python3 
-          apt-get install build-essential
+          apt-get install -y build-essential
           make build
       - run: echo "build complete"
   deb-package-stuff:
