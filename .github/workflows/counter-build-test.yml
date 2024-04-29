@@ -1,6 +1,9 @@
 name: ubuntu latest
 run-name: ${{ github.actor }} is trying to make this work 🚀
-on: [push]
+on: 
+  push:
+    tags:
+      '1'
 jobs:
   build:
     timeout-minutes: 2
