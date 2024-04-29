@@ -2,7 +2,7 @@ name: Runner setup
 run-name: ${{ github.actor }} is trying to make this work 🚀
 on: [push]
 jobs:
-  build:
+  setup:
     timeout-minutes: 3
     runs-on: self-hosted
     container: ubuntu:latest
@@ -10,6 +10,12 @@ jobs:
       - name: Install make
         run: apt-get update && apt-get install -y make
 
+  build:
+    needs: [setup]
+    timeout-minutes: 3
+    runs-on: self-hosted
+    container: ubuntu:latest
+    steps:
       - name: Build project
         run: |
           make build
