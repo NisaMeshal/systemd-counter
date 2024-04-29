@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: test project
         run: |
+          apt-get update
+          apt-get install -y python3 
+          apt-get install build-essential
           make test
       - run: echo "🍏 This job's status is ${{ job.status }}."
   deb-package-stuff:

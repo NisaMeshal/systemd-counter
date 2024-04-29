@@ -9,6 +9,9 @@ jobs:
     steps:
       - name: Build project
         run: |
+          apt-get update
+          apt-get install -y python3 
+          apt-get install build-essential
           make build
       - name: test project
         run: |
