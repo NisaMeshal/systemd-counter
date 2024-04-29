@@ -68,4 +68,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             echo Hello from Github
-            dpkg -i counter-v2.0.0.deb
+            sudo dpkg -i counter-v2.0.0.deb
