@@ -29,6 +29,12 @@ jobs:
         run: apt-get update && apt-get install -y make
       - name: Install Python
         run: apt-get update && apt-get install -y python3
+
+      - name: pip install
+        run: apt install python3-pip 
+      - name: Install pytest
+        run: pip3 install pytest
+        
       - run: echo "Building deb package"
       - name: build deb package
         run: |

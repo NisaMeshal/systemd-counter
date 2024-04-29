@@ -1,4 +1,4 @@
-name: Runner setup
+name: self hosted
 run-name: ${{ github.actor }} is trying to make this work 🚀
 on: [push]
 jobs:
@@ -25,8 +25,11 @@ jobs:
         run: apt-get update && apt-get install -y make
       - name: Install Python
         run: apt-get update && apt-get install -y python3
+      - name: pip install
+        run: apt install python3-pip 
       - name: Install pytest
-        run: pip install pytest
+        run: pip3 install pytest
+
         
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -55,7 +58,7 @@ jobs:
             counter-v2.0.0.deb
       - run: echo "🍏 This job's status is ${{ job.status }}."
   lint-debian-package:
-    timeout-minutes: 2
+    timeout-minutes: 4
     runs-on: self-hosted
     container: ubuntu:latest
     steps:
